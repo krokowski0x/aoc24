@@ -50,9 +50,9 @@ const part2 = (input: string[]): number => {
 (async () => {
   const input = await readLines(import.meta.dir);
 
-  console.log(part1(input));
+  console.log('Part 1:', part1(input));
 
-  console.log(part2(input))
+  console.log('Part 2:', part2(input))
 })();
 
 export { part1, part2 }
