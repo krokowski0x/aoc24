@@ -2,6 +2,10 @@
   "name": "aoc24",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "next": "bun src/next.ts",
+    "start": "bun run $(echo src/day$(date +'%e' | xargs)/solution.ts)"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
