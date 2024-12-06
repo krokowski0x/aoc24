@@ -6,4 +6,8 @@ const readLines = async (dir: string, example: boolean = false): Promise<string[
   return lines
 }
 
-export { readLines }
+const prettyPrint = (map: string[][]) => {
+  map.forEach((row) => console.log(row.join('')));
+};
+
+export { readLines, prettyPrint }
