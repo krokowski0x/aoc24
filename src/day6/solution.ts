@@ -33,7 +33,7 @@ const part1 = (input: string[][]): number => {
     }
   }
 
-  prettyPrint(input);
+  // prettyPrint(input);
 
   return input.reduce(
     (prev, curr) => prev + curr.filter((cell) => cell === "X").length,
@@ -66,21 +66,15 @@ const part2 = (input: string[][]): number => {
       guardX + dirs[currentDir][1] < input[0].length &&
       input[guardY + dirs[currentDir][0]][guardX + dirs[currentDir][1]] === "#"
     ) {
-      if (input[guardY][guardX] === "X") {
-        console.log('cross!')
-      }
       currentDir = (currentDir + 1) % 4;
     } else {
-      if (input[guardY][guardX] === "X") {
-        console.log('cross!')
-      }
       input[guardY][guardX] = "X";
       guardY += dirs[currentDir][0];
       guardX += dirs[currentDir][1];
     }
   }
 
-  prettyPrint(input);
+  // prettyPrint(input);
 
   return input.reduce(
     (prev, curr) => prev + curr.filter((cell) => cell === "X").length,
