@@ -24,10 +24,8 @@ const part1 = (input: string[][]): number => {
     const sum = Number(line.shift()?.slice(0, -1));
     const values = line.map(Number);
     for (const combo of generateCombinations(line.length - 1)) {
-      const ops = combo.split("");
-
       const outcome = values.reduce((prev, curr, idx) => {
-        return ops[idx - 1] === "+" ? prev + curr : prev * curr;
+        return combo[idx - 1] === "+" ? prev + curr : prev * curr;
       });
 
       if (outcome === sum) {
@@ -46,16 +44,14 @@ const part2 = (input: string[][]): number => {
     const sum = Number(line.shift()?.slice(0, -1));
     const values = line.map(Number);
     for (const combo of generateCombinations(line.length - 1, true)) {
-      const ops = combo.split("");
-
       const outcome = values.reduce((prev, curr, idx) => {
-        if (ops[idx - 1] === "+") {
+        if (combo[idx - 1] === "+") {
           return prev + curr;
         }
-        if (ops[idx - 1] === "*") {
+        if (combo[idx - 1] === "*") {
           return prev * curr;
         }
-        if (ops[idx - 1] === "|") {
+        if (combo[idx - 1] === "|") {
           return Number(String(prev) + String(curr));
         }
 
