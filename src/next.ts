@@ -1,7 +1,7 @@
 import { mkdir } from "node:fs/promises";
 
 (async () => {
-  const day = new Date().getDay() + 1;
+  const day = new Date().getDate();
   const dir = `src/day${day}/`;
   const solution = `
 import { readLines } from "../utils";
